@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cook_book>
+	<recipe>
+		<recipe_header>
+			<title>Gooseberry crème brûlée tart</title>
+			<rating>2</rating>
+			<author>Barney Desmazery</author>
+			<description>Seasonal berries and sweet pastry make a stunning dessert for a dinner party - blowtorch for a beautifully crisp cracked sugar topping</description>
+			<additional_info>
+				<prep_time>10 mins</prep_time>
+				<cook_time>1hr, 20 mins</cook_time>
+				<complexity>More effort</complexity>
+				<serves>8</serves>
+			</additional_info>
+			<nutrition_info>
+				<kcal>467</kcal>
+				<fat>21g</fat>
+				<saturates>11g</saturates>
+				<carbs>60g</carbs>
+				<sugars>39g</sugars>
+				<fibre>3g</fibre>
+				<protein>7g</protein>
+				<salt>0.4g</salt>
+			</nutrition_info>
+		</recipe_header>
+		<recipe_ingredients>
+			<ingredient_list>
+				<ingredient>
+					<item>gooseberries</item>
+					<quantity>450g</quantity>
+					<more_info></more_info>
+				</ingredient>
+				<ingredient>
+					<item>white caster sugar</item>
+					<quantity>200g</quantity>
+					<more_info></more_info>
+				</ingredient>
+				<ingredient>
+					<item>eggs</item>
+					<quantity>4</quantity>
+					<more_info></more_info>
+				</ingredient>
+				<ingredient>
+					<item>double cream</item>
+					<quantity>100ml</quantity>
+					<more_info></more_info>
+				</ingredient>
+				<ingredient>
+					<item>block sweet pastry</item>
+					<quantity>500g</quantity>
+					<more_info></more_info>
+				</ingredient>
+				<ingredient>
+					<item>flour</item>
+					<quantity></quantity>
+					<more_info>for dusting</more_info>
+				</ingredient>
+			</ingredient_list>
+		</recipe_ingredients>
+		<recipe_body>
+			<step>
+				<paragraph>1. Tip the gooseberries into a saucepan with 100g of the sugar and 100ml water. Simmer for 8-10 mins until the fruit is soft and the juices are syrupy. Tip the fruit into a sieve set over a jug and leave to strain – you will need about 150ml of the syrupy juices. Tip the pulp into a bowl and leave to cool.</paragraph>
+			</step>
+			<step>
+				<paragraph>2. In a separate bowl, beat the eggs with 50g of the sugar, then beat in the cream and gooseberry syrup. Strain through a sieve into another jug and set aside.</paragraph>
+			</step>
+			<step>
+				<paragraph>3. Heat oven to 160C/140C fan/gas 3. Roll out the pastry on a lightly floured surface to the thickness of a £1 coin, then lift into a 23cm tart tin. Press down gently on the bottom and sides, leaving a slight overhang. Line the tart with foil and fill with baking beans. Bake for 10 mins, then discard the foil and beans, and bake for another 20 mins. Remove from the oven and leave to cool.</paragraph>
+			</step>
+			<step>
+				<paragraph>4. Reduce oven to 150C/130C fan/gas 2. Spread the pulp evenly over the base of the tart, then carefully pour the cream mixture over it to create 2 layers. Bake for 35-40 mins until the cream layer has the slightest wobble to it. Remove from the oven and trim the pastry edges. Leave to cool completely, then scatter over the remaining sugar, caramelise with a blowtorch, if you like, and serve straight away.</paragraph>
+			</step>
+		</recipe_body>
+		<recipe_footer>
+			<content>Recipe from Good Food magazine, July 2015</content>
+		</recipe_footer>
+	</recipe>	
+</cook_book>
