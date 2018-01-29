@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+  <xs:element name="cook_book">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="recipe"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="recipe">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="recipe_header"/>
+        <xs:element ref="recipe_ingredients"/>
+        <xs:element ref="recipe_body"/>
+        <xs:element ref="recipe_footer"/>
+      </xs:sequence>
+      <xs:attribute ref="xml:id" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="recipe_header">
+    <xs:complexType>
+      <xs:sequence>
+			<xs:element name="title" type="xs:string"/>
+			<xs:element name="rating" type="xs:integer"/>
+			<xs:element name="author" type="xs:string"/>
+			<xs:element name="description" type="xs:string"/>
+			<xs:element name="gluten_free" type="xs:boolean"/>
+			<xs:element name="freezable" type="xs:boolean"/>
+			<xs:element name="additional_info" use="required">
+				<xs:complexType>
+					<xs:sequence>
+					  <xs:element type="xs:string" name="prep_time"/>
+					  <xs:element type="xs:string" name="cook_time"/>
+					  <xs:element type="xs:string" name="complexity">
+						  <xs:simpleType>
+							<xs:restriction base="xs:string">
+							  <xs:enumeration value="Easy"/>
+							  <xs:enumeration value="More Effort"/>
+							  <xs:enumeration value=" A Challenge"/>
+							</xs:restriction>
+						  </xs:simpleType>
+					  </xs:element>
+					  <xs:element type="xs:integer" name="serves"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+        <xs:element ref="nutrition_info"/>
+      </xs:sequence>
+    </xs:complexType>	
+  </xs:element>  
+  <xs:element name="additional_info">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="prep_time"/>
+        <xs:element ref="cook_time"/>
+        <xs:element ref="complexity"/>
+        <xs:element ref="serves"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="prep_time" type="xs:string"/>
+  <xs:element name="cook_time" type="xs:string"/>
+  <xs:element name="complexity" type="xs:string"/>
+  <xs:element name="serves" type="xs:integer"/>
+  <xs:element name="nutrition_info">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="kcal"/>
+        <xs:element ref="fat"/>
+        <xs:element ref="saturates"/>
+        <xs:element ref="carbs"/>
+        <xs:element ref="sugars"/>
+        <xs:element ref="fibre"/>
+        <xs:element ref="protein"/>
+        <xs:element ref="salt"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="kcal" type="xs:integer"/>
+  <xs:element name="fat">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="unit" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="saturates">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="unit" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="carbs">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="unit" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="sugars">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="unit" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fibre">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="unit" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="protein">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:integer">
+          <xs:attribute name="unit" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="salt">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:decimal">
+          <xs:attribute name="unit" use="required" type="xs:NCName"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="recipe_ingredients">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ingredient_list"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ingredient_list">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="ingredient"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ingredient">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="item"/>
+        <xs:element ref="quantity"/>
+        <xs:element ref="more_info"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="item" type="xs:string"/>
+  <xs:element name="quantity">
+    <xs:complexType mixed="true">
+      <xs:attribute name="unit" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="more_info" type="xs:string"/>
+  <xs:element name="recipe_body">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="step"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="step">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="paragraph"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="paragraph" type="xs:string"/>
+  <xs:element name="recipe_footer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="content"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="content" type="xs:string"/>
+</xs:schema>
