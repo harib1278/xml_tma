@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-  <xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="recipe.xsd"/>
-  <xsd:element name="cook_book">
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element name="recipe"  minOccurs="1">
+  <xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="recipes.xsd"/>
+        <xsd:element name="recipe">
           <xsd:complexType>
             <xsd:sequence>
               <xsd:element name="recipe_header" minOccurs="1">
@@ -20,9 +17,9 @@
                       <xsd:complexType>
                         <xsd:sequence>
                           <xsd:element type="xsd:string" name="prep_time"/>
-                          <xsd:element type="xsd:string" name="cook_time"/>
-                          <xsd:element type="xsd:string" name="complexity"/>
-                          <xsd:element type="xsd:byte" name="serves"/>
+                          <xsd:element type="xsd:integer" name="cook_time"/>
+                          <xsd:element type="xsd:string" name="difficulty"/>
+                          <xsd:element type="xsd:integer" name="serves"/>
                         </xsd:sequence>
                       </xsd:complexType>
                     </xsd:element>
@@ -151,7 +148,4 @@
             </xsd:sequence>
           </xsd:complexType>
         </xsd:element>
-      </xsd:sequence>
-    </xsd:complexType>
-  </xsd:element>
 </xsd:schema>
