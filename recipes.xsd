@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
 	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="recipes.xsd"/>
-	<xsd:element name="recipe">
+	<xsd:element name="cook_book">
 		<xsd:complexType>
 			<xsd:sequence>
-				<xsd:element name="recipe">
+				<xsd:element name="recipe" minOccurs="1">
 					<xsd:complexType>
 						<xsd:sequence>
 							<xsd:element name="recipe_header" minOccurs="1">
