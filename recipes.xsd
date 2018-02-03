@@ -112,7 +112,7 @@
 																<xsd:element name="quantity">
 																	<xsd:complexType>
 																		<xsd:simpleContent>
-																			<xsd:extension base="xsd:string">
+																			<xsd:extension base="xsd:float">
 																				<xsd:attribute type="xsd:string" name="unit" use="optional"/>
 																			</xsd:extension>
 																		</xsd:simpleContent>
