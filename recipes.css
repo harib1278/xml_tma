@@ -3,7 +3,7 @@ html, h1, h2, h3, h4, h5{
 }
 table {
 	border: 1px solid #666;
-    width: 100%;
+    width: 60%;
 	margin-bottom:10px;
 }
 tbody{
@@ -19,6 +19,7 @@ tr:nth-child(even) {
 
 .header {
 	background-color: #fffa4d45;
+	font-weight: bold;
 }
 .title{
 	font-style: italic;

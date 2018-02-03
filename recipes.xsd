@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="recipes.xsd"/>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="recipe.xsd"/>
 	<xsd:element name="cook_book">
 		<xsd:complexType>
 			<xsd:sequence>
-				<xsd:element name="recipe">
+				<xsd:element name="recipe" maxOccurs="unbounded" minOccurs="0">
 					<xsd:complexType>
 						<xsd:sequence>
-							<xsd:element name="recipe_header" minOccurs="1">
+							<xsd:element name="recipe_header">
 								<xsd:complexType>
 									<xsd:sequence>
 										<xsd:element type="xsd:string" name="title"/>
@@ -19,8 +19,24 @@
 										<xsd:element name="additional_info">
 											<xsd:complexType>
 												<xsd:sequence>
-													<xsd:element type="xsd:string" name="prep_time"/>
-													<xsd:element type="xsd:integer" name="cook_time"/>
+													<xsd:element name="prep_time">
+														<xsd:complexType>
+															<xsd:simpleContent>
+																<xsd:extension base="xsd:integer">
+																	<xsd:attribute type="xsd:string" name="unit" use="optional"/>
+																</xsd:extension>
+															</xsd:simpleContent>
+														</xsd:complexType>
+													</xsd:element>
+													<xsd:element name="cook_time">
+														<xsd:complexType>
+															<xsd:simpleContent>
+																<xsd:extension base="xsd:integer">
+																	<xsd:attribute type="xsd:string" name="unit" use="optional"/>
+																</xsd:extension>
+															</xsd:simpleContent>
+														</xsd:complexType>
+													</xsd:element>
 													<xsd:element type="xsd:string" name="difficulty"/>
 													<xsd:element type="xsd:integer" name="serves"/>
 												</xsd:sequence>
@@ -112,7 +128,7 @@
 																<xsd:element name="quantity">
 																	<xsd:complexType>
 																		<xsd:simpleContent>
-																			<xsd:extension base="xsd:float">
+																			<xsd:extension base="xsd:string">
 																				<xsd:attribute type="xsd:string" name="unit" use="optional"/>
 																			</xsd:extension>
 																		</xsd:simpleContent>

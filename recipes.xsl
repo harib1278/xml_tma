@@ -30,7 +30,8 @@
 								</td>
 								<td>
 									<xsl:for-each select="./additional_info">
-										<xsl:value-of select="prep_time" />	Mins
+										<xsl:value-of select="prep_time" /> 
+										<xsl:value-of select="//prep_time/@unit"/>
 									</xsl:for-each>
 								</td>
 							</tr>
@@ -40,7 +41,8 @@
 								</td>
 								<td>
 									<xsl:for-each select="./additional_info">
-										<xsl:value-of select="cook_time" />	Mins
+										<xsl:value-of select="cook_time" />
+										<xsl:value-of select="//prep_time/@unit"/>
 									</xsl:for-each>
 								</td>
 							</tr>
